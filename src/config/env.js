@@ -4,5 +4,6 @@ module.exports = {
   port: process.env.PORT,
   dbUser: process.env.DB_USER,
   dbPass: process.env.DB_PASS,
-  jwtSecret: process.env.JWT_SECRET
+  jwtSecret: process.env.JWT_SECRET,
+  appUrl: process.env.APP_URL
 }
