@@ -38,7 +38,7 @@ route.get(
 )
 
 route.get(
-  '/:id',
+  '/user/:id',
   getById
 )
 

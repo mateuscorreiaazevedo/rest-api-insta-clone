@@ -129,6 +129,7 @@ class PhotoController {
       res.status(404).json({ errors: ['Foto não encontrada.'] })
       return
     }
+
     const userComment = {
       comment,
       name: user.userName,
@@ -139,9 +140,10 @@ class PhotoController {
     photo.comments.push(userComment)
 
     await photo.save()
-    res.status(200).json({ comment: photo.comments, user: userComment.name })
+    res.status(200).json(photo.comments)
 
   }
+
   async search (req, res) {
     const { q } =req.query
     const photos = await Photo.find({ subtitle: new RegExp(q, "i") }).exec()
